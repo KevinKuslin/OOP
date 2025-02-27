@@ -25,5 +25,9 @@ public class Main{
             } 
             count++;
         }
+        if(count == 10){
+            board.printBoard(); 
+            System.out.println("Both Players Tied!"); 
+        }
     }
 }
