@@ -14,7 +14,7 @@ public class Main{
 
         Borrower borrower = new Borrower("Alice");
 
-        library.borrowBook(borrower, book1);
+        library.borrowBook(borrower, book1); 
         library.borrowBook(borrower, book2); 
 
         borrower.displayBorrowedBooks();
