@@ -22,7 +22,7 @@ public class Main {
 		//Class(classCode, semester, year)
 		Class cl1 = new Class("11LE", 2, "2024/2025"); 
 		//Course(courseCode, courseName, credit)
-		Course co1 = new Course("COMP990323", "Object Oriented Programming", 2); 
+		Course co1 = new Course("COMP990323", "Object Oriented Programming", 2); ```
 		
 		cl1.addCourse(co1); 
 		

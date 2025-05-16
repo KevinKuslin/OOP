@@ -13,8 +13,9 @@ public class Class {
 	ArrayList<Course> courses = new ArrayList<>(); 
 	ArrayList<Student> students = new ArrayList<>(); 
 	
-	ArrayList<Student> attendingStd = new ArrayList<>(); 
-	ArrayList<Student> attendedStd = new ArrayList<>(); 
+	ArrayList<IAttendant> attendingStd = new ArrayList<>(); 
+	ArrayList<IAttendant> attendedStd = new ArrayList<>(); 
+	ArrayList<IAttendee> attendanceTaker = new ArrayList<>(); 
 	
 	public String getClassCode() {
 		return classCode;
@@ -55,16 +56,12 @@ public class Class {
 	} 
 	
 	public void attend(IAttendant iattendant) {
-		Student std = (Student) iattendant; 
-		attendingStd.add(std); 
+		attendingStd.add(iattendant); 
 	}
 	
 	public void takeAttendance(IAttendee iattendee) {
-		Lecturer lec = (Lecturer) iattendee;  
-		for(Student std: attendingStd) {
-			attendedStd.add(std); 
-			lec.getStudent().add(std); 
-		}
+		attendedStd = attendingStd; 
+		attendanceTaker.add(iattendee); 
 	}
 	
 	public void showTodayAttendance() {
@@ -85,11 +82,11 @@ public class Class {
 		
 		System.out.println("Attended Students:"); 
 		int attendedStdCount = 1; 
-		for(Student std : attendedStd) {
+		for(IAttendant iattendant : attendedStd) {
 			System.out.println("    " + attendedStdCount + ".");
-			System.out.println("    Name   : " + std.getName()); 
-			System.out.println("    NIM    : " + std.getNim()); 
-			System.out.println("    DoB    : " + std.getDob());
+			System.out.println("    Name   : " + iattendant.IgetName()); 
+			System.out.println("    NIM    : " + iattendant.IgetNim()); 
+			System.out.println("    DoB    : " + iattendant.IgetDob()); 
 			attendedStdCount++; 
 		}
 		System.out.println();

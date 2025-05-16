@@ -7,8 +7,19 @@ public class Student extends Actor implements IAttendant{
 	private String nim; 
 	private int credits = 0; 
 
-	public String getNim() {
+	@Override 
+	public String IgetNim() {
 		return nim;
+	}
+
+	@Override 
+	public String IgetName(){
+		return getName(); 
+	}
+
+	@Override 
+	public String IgetDob(){
+		return this.getDob(); 
 	}
 
 	public void setNim(String nim) {
@@ -38,7 +49,4 @@ public class Student extends Actor implements IAttendant{
 	public void setCredits(int credits) {
 		this.credits = credits;
 	}
-	
-	
-	
 }

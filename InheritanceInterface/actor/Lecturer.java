@@ -7,10 +7,21 @@ import java.util.*;
 public class Lecturer extends Actor implements IAttendee{
 	private String lecturerCode; 
 	ArrayList<Course> courses = new ArrayList<>(); 
-	ArrayList<Student> students = new ArrayList<>(); 
+	ArrayList<IAttendee> students = new ArrayList<>(); 
 
-	public String getLecturerCode() {
+	@Override 
+	public String IgetLecturerCode() {
 		return lecturerCode;
+	}
+
+	@Override 
+	public String IgetDob(){
+		return this.getDob(); 
+	}
+
+	@Override 
+	public String IgetName(){
+		return this.getName(); 
 	}
 
 	public void setLecturerCode(String lecturerCode) {
@@ -19,11 +30,6 @@ public class Lecturer extends Actor implements IAttendee{
 	
 	public List<Course> getCourse(){
 		return courses; 
-	}
-
-	
-	public List<Student> getStudent(){
-		return students; 
 	}
 
 	public Lecturer(String lecturerCode, String name, String dob) {
