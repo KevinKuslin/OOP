@@ -48,5 +48,4 @@ public class Lecturer extends Actor implements IAttendee{
 			courseCount++; 
 		}
 	}
-	
 }
